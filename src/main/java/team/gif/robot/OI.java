@@ -1,5 +1,7 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class OI {
@@ -68,6 +70,7 @@ public class OI {
     public final Trigger tDPadLeft = test.povLeft();
 
     public OI() {
+        dA.whileTrue(new PrintCommand("" + Timer.getFPGATimestamp()));
         /*
          *
          * Create controller actions here
