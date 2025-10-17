@@ -13,6 +13,6 @@ package team.gif.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-
+public static final double FORWARD_SPEED = 0.20;
 
 }

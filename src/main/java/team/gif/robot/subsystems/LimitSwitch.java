@@ -8,13 +8,13 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.DigitalInput;
 import static team.gif.robot.RobotMap.LIMIT_SWITCH_ID;
 
-public class LimitSwitchSubsystem extends SubsystemBase {
+public class LimitSwitch extends SubsystemBase {
     private static DigitalInput LimitSwitch;
 
     /**
      * Creates a new ExampleSubsystem.
      */
-    public LimitSwitchSubsystem() {
+    public LimitSwitch() {
         LimitSwitch = new DigitalInput(LIMIT_SWITCH_ID);
     }
 

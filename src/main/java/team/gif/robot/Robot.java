@@ -7,9 +7,8 @@ package team.gif.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import team.gif.lib.logging.EventFileLogger;
-import team.gif.lib.logging.TelemetryFileLogger;
-import team.gif.robot.subsystems.LimitSwitchSubsystem;
+import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 import static team.gif.robot.RobotMap.PIGEON_ID;
@@ -31,7 +30,9 @@ public class Robot extends TimedRobot {
 
   public static final boolean enableSwerveDebug = false;
 
-  public static LimitSwitchSubsystem LimitSwitch;
+  public static LimitSwitch LimitSwitch;
+
+  public static Talon talon;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -46,8 +47,10 @@ public class Robot extends TimedRobot {
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
-    LimitSwitch = new LimitSwitchSubsystem();
+    LimitSwitch = new LimitSwitch();
     pigeon = new Pigeon(PIGEON_ID);
+    talon = new Talon();
+
 
   }
 
@@ -65,11 +68,10 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
-    boolean isPressed = LimitSwitch.isPressed();
-    System.out.println("Limit Switch pressed: " + isPressed);
 
-    double getHeading = pigeon.getHeading();
-    System.out.println("Pigeon Yaw: " + getHeading);
+    System.out.println("Limit Switch pressed: " +LimitSwitch.isPressed());
+
+    System.out.println("Pigeon Yaw: " + pigeon.getHeading());
 
     ui.update();
 
