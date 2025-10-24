@@ -21,6 +21,8 @@ public class Talon extends SubsystemBase {
         talonMotor.setNeutralMode(NeutralMode.Brake);
     }
 
+
+    //Methods are camelCase
     public void MoveTalon(double percentOutput){
         talonMotor.set(TalonSRXControlMode.PercentOutput, percentOutput);
     }

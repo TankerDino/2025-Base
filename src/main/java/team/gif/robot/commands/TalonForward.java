@@ -11,18 +11,19 @@ public class TalonForward extends Command {
 
     public TalonForward() {
         super();
-        //addRequirements(Robot.climber); // uncomment
+        addRequirements(Robot.talon);
+        //addRequirements(Robot.climber); // uncomment remove unneeded comments, do this everywhere else where this is present as well
     }
 
     // Called when the command is initially scheduled.
     @Override
-    public void initialize() {
-        Robot.talon.MoveTalon(Constants.FORWARD_SPEED);
-    }
+    public void initialize() {}
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
-    public void execute() {}
+    public void execute() {
+        Robot.talon.MoveTalon(Constants.FORWARD_SPEED);
+    }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
     @Override

@@ -7,7 +7,9 @@ package team.gif.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import team.gif.robot.commands.TalonJoystickMotorControl;
 import team.gif.robot.subsystems.LimitSwitch;
+import team.gif.robot.subsystems.SparkMAX;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
@@ -34,6 +36,8 @@ public class Robot extends TimedRobot {
 
   public static Talon talon;
 
+  public static SparkMAX sparkMAX; //Max probably shouldn't be commented or included at all because you didn't mention srx for the talon
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -44,12 +48,18 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
 
-    //These should be at or near the bottom
-    oi = new OI();
-    ui = new UI();
     LimitSwitch = new LimitSwitch();
     pigeon = new Pigeon(PIGEON_ID);
     talon = new Talon();
+    sparkMAX = new SparkMAX(); //Camelcase
+
+    //Default CMD for Joystick
+    talon.setDefaultCommand(new TalonJoystickMotorControl());
+
+    //These should be at or near the bottom
+    oi = new OI();
+    ui = new UI();
+
 
 
   }
