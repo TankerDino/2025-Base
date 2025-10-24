@@ -9,17 +9,17 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import static team.gif.robot.RobotMap.LIMIT_SWITCH_ID;
 
 public class LimitSwitch extends SubsystemBase {
-    private static DigitalInput LimitSwitch; //camelCase, non-final variables use camelCase
+    private static DigitalInput limitSwitch; //camelCase, non-final variables use camelCase
 
     /**
      * Creates a new ExampleSubsystem.
      */
     public LimitSwitch() {
-        LimitSwitch = new DigitalInput(LIMIT_SWITCH_ID);
+        limitSwitch = new DigitalInput(LIMIT_SWITCH_ID);
     }
 
     public boolean isPressed() {
-        return LimitSwitch.get();
+        return limitSwitch.get();
     }
 
 }

@@ -4,7 +4,6 @@ package team.gif.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
-import team.gif.robot.subsystems.Talon;
 
 
 public class TalonBackward extends Command {
@@ -22,7 +21,7 @@ public class TalonBackward extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.talon.MoveTalon(-Constants.FORWARD_SPEED);
+        Robot.talon.MoveTalon(-Constants.TALON_PERCENT);
 
     }
 

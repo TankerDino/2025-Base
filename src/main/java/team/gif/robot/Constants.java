@@ -13,7 +13,7 @@ package team.gif.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-public static final double FORWARD_SPEED = 0.20; //Speed for what? Make sure you include the mechanical component in your names. Make sure that you don't limit yourself by only mentioning forward/backward speed only. Include units maybe, but it is kind of redundant in this case.
+public static final double TALON_PERCENT = 0.20; //Speed for what? Make sure you include the mechanical component in your names. Make sure that you don't limit yourself by only mentioning forward/backward speed only. Include units maybe, but it is kind of redundant in this case.
 public static final double SPARK_VOLT = 2.5;
 
 }
