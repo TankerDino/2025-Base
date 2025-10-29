@@ -23,7 +23,7 @@ public class Talon extends SubsystemBase {
 
 
     //Methods are camelCase
-    public void MoveTalon(double percentOutput){
+    public void moveTalon(double percentOutput){
         talonMotor.set(TalonSRXControlMode.PercentOutput, percentOutput);
     }
 

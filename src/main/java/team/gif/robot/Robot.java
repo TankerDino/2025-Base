@@ -32,7 +32,7 @@ public class Robot extends TimedRobot {
 
   public static final boolean enableSwerveDebug = false;
 
-  public static LimitSwitch LimitSwitch;
+  public static LimitSwitch limitSwitch;
 
   public static Talon talon;
 
@@ -48,7 +48,7 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
 
-    LimitSwitch = new LimitSwitch();
+    limitSwitch = new LimitSwitch();
     pigeon = new Pigeon(PIGEON_ID);
     talon = new Talon();
     sparkMAX = new SparkMAX(); //Camelcase
@@ -79,7 +79,7 @@ public class Robot extends TimedRobot {
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
 
-    System.out.println("Limit Switch pressed: " +LimitSwitch.isPressed());
+    System.out.println("Limit Switch pressed: " + limitSwitch.isPressed());
 
     System.out.println("Pigeon Yaw: " + pigeon.getHeading());
 

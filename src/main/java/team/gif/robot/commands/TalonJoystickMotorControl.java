@@ -19,7 +19,7 @@ public class TalonJoystickMotorControl extends Command {
     @Override
     public void execute() {
         double MotorPercent = Robot.oi.driver.getLeftY(); //camelCase
-        Robot.talon.MoveTalon(-MotorPercent);
+        Robot.talon.moveTalon(-MotorPercent);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
