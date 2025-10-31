@@ -9,4 +9,7 @@ public abstract class RobotMap {
     public static final int PIGEON_ID = 9;
     public static final int TALON_ID = 5;
     public static final int SPARK_ID = 45;
+    public static final int PCM_ID = 1;
+    public static final int PCM_FORWARD_CHANNEL = 1;
+    public static final int PCM_REVERSE_CHANNEL = 2;
 }

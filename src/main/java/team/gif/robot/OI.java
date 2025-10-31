@@ -3,7 +3,9 @@ package team.gif.robot;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.GetFPGATimestamp;
+import team.gif.robot.commands.SolenoidToggle;
 import team.gif.robot.commands.SparkMaxVoltControl;
+import team.gif.robot.commands.SparkRPMControl;
 import team.gif.robot.commands.TalonBackward;
 import team.gif.robot.commands.TalonForward;
 
@@ -73,10 +75,12 @@ public class OI {
     public final Trigger tDPadLeft = test.povLeft();
 
     public OI() {
-        dA.whileTrue(new GetFPGATimestamp());
+//        dA.whileTrue(new GetFPGATimestamp());
         dB.whileTrue(new TalonBackward());
         dX.whileTrue(new TalonForward());
-        dY.whileTrue((new SparkMaxVoltControl()));
+        dA.whileTrue((new SparkMaxVoltControl()));
+        dY.whileTrue((new SparkRPMControl()));
+        dLBump.whileTrue(new SolenoidToggle());
         /*
          *
          * Create controller actions here

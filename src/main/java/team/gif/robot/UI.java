@@ -20,6 +20,8 @@ public class UI {
 
         Robot.pigeon.addToShuffleboard("2025-Base", "Pigeon");
 
+        shuffleboardTab.addDouble("Spark RPM", Robot.sparkMAX::getRPM);
+
 
     }
 

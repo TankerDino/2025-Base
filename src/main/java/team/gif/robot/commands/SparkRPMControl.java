@@ -4,9 +4,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
 
-public class SparkMaxVoltControl extends Command {
+public class SparkRPMControl extends Command {
 
-    public SparkMaxVoltControl() {
+    public SparkRPMControl() {
         super();
         addRequirements(Robot.sparkMAX);
         //addRequirements(Robot.climber); // uncomment
@@ -19,7 +19,7 @@ public class SparkMaxVoltControl extends Command {
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
     public void execute() {
-        Robot.sparkMAX.setVoltage(Constants.SPARK_VOLT);
+        Robot.sparkMAX.setRPM(Constants.SPARK_RPM);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
@@ -31,6 +31,6 @@ public class SparkMaxVoltControl extends Command {
     // Called when the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        Robot.sparkMAX.setVoltage(0);
+        Robot.sparkMAX.setRPM(0);
     }
 }
