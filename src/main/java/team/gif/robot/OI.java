@@ -78,8 +78,8 @@ public class OI {
 //        dA.whileTrue(new GetFPGATimestamp());
         dB.whileTrue(new TalonBackward());
         dX.whileTrue(new TalonForward());
-        dA.whileTrue((new SparkMaxVoltControl()));
-        dY.whileTrue((new SparkRPMControl()));
+        dA.whileTrue(new SparkMaxVoltControl());
+        dY.whileTrue(new SparkRPMControl());
         dLBump.whileTrue(new SolenoidToggle());
         /*
          *
